@@ -14,7 +14,10 @@
 <h2 id="title">{{resume.title}}</h2>
 <p>{{resume.titleDescription}}</p>
 
-<h3 style="text-decoration: underline; margin-bottom: 0;">Area of Expertise</h3>
+<section>
+	<h3>Area of Expertise</h3>
+</section>
+
 <row style="justify-content: space-around">
 	<ul>
 		<li *ngFor="let e1 of resume.expertise1">{{e1}}</li>
@@ -24,110 +27,38 @@
 	</ul>
 </row>
 
-<h3 style="text-decoration: underline; margin-bottom: 0;">Technical Skills</h3>
+<section>
+	<h3>Technical Skills</h3>
+</section>
 <p>{{resume.skills}}</p>
 
-<h3 style="text-decoration: underline; margin-bottom: 10px;">Professional Experience</h3>
 
+<section>
+	<h3>Professional Experience</h3>
+</section>
 <article *ngFor="let e of resume.experience">
 	<row>
 		<h4>{{e.application}}</h4>
 		<h4>{{e.date}}</h4>
 	</row>
-	<row>
+	<row *ngIf="e.role; else roles">
 		<h4>{{e.role}}</h4>
 	</row>
+	<ng-template #roles>
+		<row *ngFor="let r of e.roles">
+			<h4>{{r.role}}</h4>
+			<h4>{{r.date}}</h4>
+		</row>
+	</ng-template>
 	<p>{{e.description}}</p>
 </article>
 
-<row>
-	<h4>ConnecTech Store Front</h4>
-	<h4>March 2011 - November 2011</h4>
-</row>
-<row>
-	<h4>SENIOR-TECHNICAL ARCHITECT</h4>
-</row>
-<p>Authored Joint Interface Agreements, metrics solution and implementation plan. Created configuration management process
-	from development builds to deployments in all environments using tools such as Hudson, shell scripts and Weblogic Deployer
-	APIs.
-</p>
 
-<row>
-	<h4>att.net and Insider Portals</h4>
-	<h4>August 2010 - March 2011</h4>
-</row>
-<row>
-	<h4>SENIOR-TECHNICAL ARCHITECT</h4>
-</row>
-<p>Authored Joint Interface Agreements, metrics solution and implementation plan. Created configuration management process
-	from development builds to deployments in all environments using tools such as Hudson, shell scripts and Weblogic Deployer
-	APIs.
-</p>
-
-<row>
-	<h4>Broadband Ordering and Care</h4>
-	<h4>January 2007-August 2010</h4>
-</row>
-<row>
-	<h4>Lead SE DSL Ordering Architect for SE DSL Ordering</h4>
-</row>
-<p>Lead SE DSL Ordering Architect for SE DSL Ordering Provide Architectural Direction and Recommendations Developed Application
-	Roadmap and Rationalization Provide technical consultations General Oversight for SE DSL Corporate Compliance, Provide technical
-	solution for critical defects, Lead the effort to improve DSL Order flow through, resulting in a 400% improvement in 1 year.
-	Developed a JavaFX order monitoring application that supported DSL flow through improvements. Lead Solution Architect for
-	Oracle CRM replacement with Sterling Multi-Channel Fulfillment (MCF). Lead Solution Architect for AT&T SE broadband for
-	the NAP project; which integrated BellSouth DSL with Member Profile System. Awarded 5 US Patents for AT&T
-</p>
-
-<row>
-	<h4>BellSouth Technology Group (BTG) Customer Markets</h4>
-</row>
-<row>
-	<h4>Lead Application Architect (Employee)</h4>
-	<h4>August 2005-January 2007</h4>
-</row>
-<row>
-	<h4>Senior Application Architect (Contract)</h4>
-	<h4>August 2004-August 2005</h4>
-</row>
-<p>Designed, Developed changes to Yantra and Informatica applications for Post BBT change requests and defects. Architecture
-	Lead for BellSouth Broadband Transformation (BBT) Integrated Order Management (IOM). Responsible for reviewing and providing
-	feedback on all Accenture deliverables for the BellSouth Customer Contact Transformation (CCT) Project. Participated as
-	the Customer Markets CIO representative in the BellSouth IT Architecture Councils, including Technical Architecture, Business
-	Architecture, and Extensible Architecture</p>
-
-<row>
-	<h4>Accenture Wholesale Customer Operations Tower</h4>
-	<h4>November 2002 - August 2004</h4>
-</row>
-<row>
-	<h4>Technical Architect</h4>
-</row>
-<p>ICS WebPortal, Service Order Review Tool (SORT), LCSC Toolkit, EASY Participated in J2EE Special Interest Group meetings.
-	Maintained communication with Architects across towers to ensure that new development initiatives are following existing
-	and emerging standards at BellSouth. Trained new developers in understanding the design and architecture of the applications
-	for which they are responsible. Mentored developers on BellSouth technologies and Architectures. Conducted walkthroughs
-	and peer reviews of developers' design and code. Participated in PRI, Security and OAD reviews. Provided production support
-	and weekly status updates.</p>
-
-<row>
-	<h4>Accenture BIST Tower</h4>
-	<h4>January 2002 - October 2002</h4>
-</row>
-<row>
-	<h4>Senior Software Developer</h4>
-</row>
-<p>Maintained the XMLGateway application. Designed and developed changes to support LQS changes. Analyzed error rates to
-	reduce the frequency from 27% to less than 1%.∫ Designed and analyzed changes to Core Services for Rodeo 1.0 that allowed
-	discounts for DSL and Dial based on bundled wireless, long distance and wireline packages. Supported production of Core
-	Services.
-</p>
-
-<row>
-	<h4>Patents</h4>
-</row>
+<section>
+	<h3>Awards</h3>
+</section>
 <pre>
-Number          Title
+Patent #   	Title
 7,877,434	Method, system and apparatus for presenting forms and publishing form data
 7,870,537	System and method for real-time applications modification
 7,469,270	Method, system, and apparatus for presenting forms and publishing form data
@@ -137,9 +68,6 @@ Number          Title
 7,000,236	System and method for using web based applications to manipulate data with manipulation functions
   </pre>
 
-<row>
-	<h4>Awards</h4>
-</row>
 <row>
 	<h4>Title</h4>
 	<h4>Date</h4>
@@ -159,11 +87,11 @@ This Bronze-level President Volunteer Service Award badge is awarded for employe
 
 <br>
 <row>
-  <h4>Education</h4>
+	<h4>Education</h4>
 </row>
 <row>
-  <h4>Tulane University School of Engineering</h4>
-  <h4>June '91 - June '95</h4>
+	<h4>Tulane University School of Engineering</h4>
+	<h4>June '91 - June '95</h4>
 </row>
 <pre>
 Bachelor of Science in Computer Science
