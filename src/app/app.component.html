@@ -1,100 +1,109 @@
-<header>
-	<row>
-		<h1 class="row-item">{{resume.name}}</h1>
-		<h4 class="row-item">{{resume.email}}</h4>
-	</row>
-	<row>
-		<h4 class="row-item">{{resume.phone}}</h4>
-		<h4 class="row-item">{{resume.address}}</h4>
-	</row>
-</header>
+<nav>
+  <ul>
+    {{ sectionElements }}
+    <li *ngFor="let section of sections">
+      {{ section }}
+    </li>
+  </ul>
+</nav>
+<main>
 
-<hr>
-
-<h2 id="title">{{resume.title}}</h2>
-<p>{{resume.titleDescription}}</p>
-
-<section>
-	<h3>Area of Expertise</h3>
-</section>
-
-<row style="justify-content: space-around">
-	<ul>
-		<li *ngFor="let e1 of resume.expertise1">{{e1}}</li>
-	</ul>
-	<ul>
-		<li *ngFor="let e2 of resume.expertise2">{{e2}}</li>
-	</ul>
-</row>
-
-<section>
-	<h3>Technical Skills</h3>
-</section>
-<p>{{resume.skills}}</p>
-
-
-<section>
-	<h3>Professional Experience</h3>
-</section>
-<article *ngFor="let e of resume.experience">
-	<row>
-		<h4>{{e.application}}</h4>
-		<h4>{{e.date}}</h4>
-	</row>
-	<row *ngIf="e.role; else roles">
-		<h4>{{e.role}}</h4>
-	</row>
-	<ng-template #roles>
-		<row *ngFor="let r of e.roles">
-			<h4>{{r.role}}</h4>
-			<h4>{{r.date}}</h4>
+	<section>
+		<row>
+			<h1 class="row-item">{{resume.applicant.name}}</h1>
+			<h4 class="row-item">{{resume.applicant.email}}</h4>
 		</row>
-	</ng-template>
-	<p>{{e.description}}</p>
-</article>
+		<row>
+			<h4 class="row-item">{{resume.applicant.phone}}</h4>
+			<h4 class="row-item">{{resume.applicant.address}}</h4>
+		</row>
 
+		<h2 id="title">{{resume.applicant.title}}</h2>
+		<p>{{resume.applicant.titleDescription}}</p>
+	</section>
 
-<section>
-	<h3>Awards</h3>
-</section>
-<pre>
-Patent #   	Title
-7,877,434	Method, system and apparatus for presenting forms and publishing form data
-7,870,537	System and method for real-time applications modification
-7,469,270	Method, system, and apparatus for presenting forms and publishing form data
-7,296,297	System and method for using web-based applications to validate data with validation functions
-7,103,876	System and method for analyzing executing computer applications in real-time
-7,017,151	System and method for real-time applications modification
-7,000,236	System and method for using web based applications to manipulate data with manipulation functions
-  </pre>
+	<section>
+		<h3>Area of Expertise</h3>
 
-<row>
-	<h4>Title</h4>
-	<h4>Date</h4>
-</row>
-<row>
-	<h4>President's Volunteer Service Award</h4>
-	<h4>2013</h4>
-</row>
-<pre>
+		<row style="justify-content: space-around">
+			<ul>
+				<li *ngFor="let e1 of resume.expertise">{{e1}}</li>
+			</ul>
+			<ul>
+				<li *ngFor="let e2 of resume.expertise2">{{e2}}</li>
+			</ul>
+		</row>
+
+	</section>
+
+	<section>
+		<h3>Technical Skills</h3>
+		<p>{{resume.skills}}</p>
+
+	</section>
+
+	<section>
+		<h3>Professional Experience</h3>
+		<article *ngFor="let e of resume.experience">
+			<row>
+				<h4>{{e.application}}</h4>
+				<h4>{{e.date}}</h4>
+			</row>
+			<row *ngIf="e.role; else roles">
+				<h4>{{e.role}}</h4>
+			</row>
+			<ng-template #roles>
+				<row *ngFor="let r of e.roles">
+					<h4>{{r.role}}</h4>
+					<h4>{{r.date}}</h4>
+				</row>
+			</ng-template>
+			<p>{{e.description}}</p>
+		</article>
+
+	</section>
+
+	<section>
+		<h3>Awards</h3>
+		<row style="justify-content: normal;">
+			<h4>Patent #</h4>
+			<h4 style="margin-left: 27px">Description</h4>
+		</row>
+		<row style="justify-content: normal;" *ngFor="let r of resume.patents">
+			<h4>{{r.number}}</h4>
+			<h4 style="margin-left: 15px">{{r.description}}</h4>
+		</row>
+
+	</section>
+<!--   
+	<row style="margin-top: 15px;">
+		<h4>Title</h4>
+		<h4>Date</h4>
+	</row>
+	<row>
+		<h4>President's Volunteer Service Award</h4>
+		<h4>2013</h4>
+	</row>
+	<pre>
 This Bronze-level President Volunteer Service Award badge is awarded for employees who have reported 100-249 hours of volunteer service in 2016 on the AT&T Volunteerism website at https://att.volunteermatch.org.
   </pre>
-<row>
-	<h4>CIO Award Information Technology</h4>
-	<h4>2016</h4>
-</row>
-<pre>In recognition for receiving the highest achievement in IT</pre>
+	<row>
+		<h4>CIO Award Information Technology</h4>
+		<h4>2016</h4>
+	</row>
+	<pre>In recognition for receiving the highest achievement in IT</pre>
 
-<br>
-<row>
-	<h4>Education</h4>
-</row>
-<row>
-	<h4>Tulane University School of Engineering</h4>
-	<h4>June '91 - June '95</h4>
-</row>
-<pre>
+	<br>
+	<row>
+		<h4>Education</h4>
+	</row>
+	<row>
+		<h4>Tulane University School of Engineering</h4>
+		<h4>June '91 - June '95</h4>
+	</row>
+	<pre>
 Bachelor of Science in Computer Science
 Dean's List
 Best WWW Page: Content & Presentation
-  </pre>
+  </pre> -->
+</main>

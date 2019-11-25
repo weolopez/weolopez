@@ -1,6 +1,4 @@
 section {
-  text-decoration: underline; 
-  margin-bottom: 0;
 }
 
 pre {
@@ -21,6 +19,10 @@ h2,
 h3,
 h4 {
   font-weight: 100;
+}
+h3 {
+  text-decoration: underline; 
+  margin-bottom: 0;
 }
 
 h4 {
