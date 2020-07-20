@@ -18,9 +18,16 @@ export const RESUME = {
     ],
     skills: 'Angular (HTML, CSS, Typescript), Java MicroServices, Apache Camel, Docker, Kubernetes, Quarkus, Linux, bash scripting, SQL, MongoDB, NodeJS, ExpressJS, Nginx, UML (HLD/DD), requirements estimation',
     experience: [
+
       {
         application: 'Shared Application Partner Management Platform',
-        date: 'February 2016 - Present',
+        date: 'September 2019 - Present',
+        role: 'PRINCIPAL-SYSTEM ENGINEER',
+        description: 'Lead technical, system and security architecture for AT&T Business Console. AT&T Business Console provides customer self service for enrollment and management of devices (DMP). DMP integrates with IBM MAAS 360 Mobile Device Management, Google ZTE, Samsung KME, Apple ABM and AT&T EFOTA. The frontend is built using Angular X; backend is build on Java and Camel based MicroServices deployed on Kubernetes across three data centers.'
+      },
+      {
+        application: 'Shared Application Partner Management Platform',
+        date: 'February 2016 - September 2019',
         role: 'PRINCIPAL-SYSTEM ENGINEER',
         description: 'Lead technical, system and security architecture for AT&T Business Console. AT&T Business Console provides customer self service for enrollment and management of devices (DMP). DMP integrates with IBM MAAS 360 Mobile Device Management. The frontend is built using Angular 7; backend is build on Java and Camel based MicroServices deployed on Kubernetes across three data centers.'
       },
